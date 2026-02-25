@@ -12,15 +12,15 @@ export default function Register() {
 
       <div className="inputs">
         <div className="input">
-          <FaUser />
+          <FaUser className="user" />
           <input type="text" />
         </div>
         <div className="input">
-          <FaEnvelope />
+          <FaEnvelope className="enve" />
           <input type="email" />
         </div>
         <div className="input">
-          <FaKey />
+          <FaKey className="key" />
           <input type="password" />
         </div>
 
