@@ -1,6 +1,6 @@
-import ProgressTracker from "./ProgressTracker";
-import TaskForm from "./TaskForm";
-import TaskList from "./TaskList";
+import ProgressTracker from "../components/ProgressTracker";
+import TaskForm from "../components/TaskForm";
+import TaskList from "../components/TaskList";
 import { useEffect, useState } from "react";
 
 export default function Form() {
