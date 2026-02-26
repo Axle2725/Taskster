@@ -2,7 +2,7 @@
 /* General container styles */
 
 body {
-  background-color: #000000;
+  background-color: #474545;
   padding: 0;
 }
 
@@ -217,7 +217,7 @@ header p {
 .App {
   font-family: Arial, sans-serif;
   text-align: center;
-  margin: 0;
+  margin: 0%;
   padding: 20px;
   background-color: black; /* Deep navy for a modern look */
   color: #e4e4e4; /* Light gray for text contrast */
@@ -317,13 +317,13 @@ h1 {
   color: #e4e4e4;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 95%;
 }
 
 .progress-bar {
   height: 12px;
   background: #6c757d; /* Neutral background for progress bar */
-  margin: 10px 0;
+  margin: 10px, 0px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);

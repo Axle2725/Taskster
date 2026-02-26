@@ -1,10 +1,12 @@
 .container {
   display: flex;
-  background: linear-gradient(#aba5a5, #474545);
+  background-color: #aba5a5;
   flex-direction: column;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 16px;
+  width: 600px;
   padding-bottom: 30px;
+  border-radius: 16px;
   /* align-items: center;
   justify-content: center; */
 }
@@ -54,7 +56,7 @@
 .enve {
   margin: 0px 30px;
 }
-.key {
+.lock {
   margin: 0px 30px;
 }
 .input input {
