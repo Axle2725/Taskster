@@ -3,7 +3,7 @@
 
 body {
   background-color: #474545;
-  padding: 0;
+  margin: 0;
 }
 
 .icon-completed {
@@ -133,8 +133,8 @@ body {
 
 /* Submit button */
 #inp button {
-  background-color: #fbbf24; /* Matches Tailwind's bg-yellow-400 */
-  color: #000000; /* Matches Tailwind's text-black */
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  color: white;
   padding: 1rem; /* Matches Tailwind's p-4 */
   border: 1px solid black;
   cursor: pointer;
@@ -142,14 +142,12 @@ body {
 }
 
 #inp button:hover {
-  background-color: #fcd34d; /* Matches Tailwind's hover:bg-yellow-300 */
+  transform: scale(105%);
 }
 
 #inp button:focus {
   outline: none;
-  box-shadow:
-    0 0 0 2px #fcd34d,
-    0 0 0 4px #1f2937; /* Matches Tailwind's focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-gray-900 */
+  box-shadow: 0 0 0 4px #1f2937; /* Matches Tailwind's focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-gray-900 */
 }
 
 /* Dropdown container */
@@ -302,14 +300,15 @@ h1 {
 .task-list button {
   background-color: transparent;
   border: none;
-  color: #ffdf8b; /* Brand color for buttons */
+  margin: 0px 10px;
+  color: #22d3ee; /* Brand color for buttons */
   font-size: 1rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .task-list button:hover {
-  color: #f9e7b8; /* Highlighted color on hover */
+  color: #434589; /* Highlighted color on hover */
 }
 
 .progress-tracker {
@@ -317,7 +316,7 @@ h1 {
   color: #e4e4e4;
   position: fixed;
   bottom: 0;
-  width: 95%;
+  width: 97%;
 }
 
 .progress-bar {

@@ -11,6 +11,7 @@ export default function TaskList({ tasks, updateTask, deleteTask }) {
           <div>
             <span>{task.text}</span>
             <small>
+              {" "}
               ({task.priority}, {task.category})
             </small>
           </div>
