@@ -31,7 +31,6 @@ export default function Register() {
 
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
-  const [emailFocus, setEmailFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
@@ -135,8 +134,6 @@ export default function Register() {
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="off"
-              onFocus={() => setEmailFocus(true)}
-              onBlur={() => setEmailFocus(false)}
               placeholder="Email Id"
             />
           </div>
