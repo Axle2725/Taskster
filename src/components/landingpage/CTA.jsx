@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+
 function CTA() {
   return (
     <section className="cta">
       <h2>Start Organizing Today</h2>
-      <button className="btn">Create Your Free Account</button>
+      <Link to="/signup">
+        <button className="btn">Create Your Free Account</button>
+      </Link>
     </section>
   );
 }

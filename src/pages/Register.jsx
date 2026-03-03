@@ -7,10 +7,11 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { useRef, useState, useEffect } from "react";
-//import "./Register.css";
+import "./Register.css";
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$$%]).{8,24}$/;
-const USER_REGEX = /^[a-zA-Z][a-zA-Z]{3,23}$/;
+const USER_REGEX = /^[A-Za-z]+(?:\s[A-Za-z]+)+$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function Register() {
   const userRef = useRef();
@@ -27,6 +28,10 @@ export default function Register() {
   const [matchPwd, setMatchPwd] = useState("");
   const [validMatch, setValidMatch] = useState(false);
   const [matchFocus, setMatchFocus] = useState(false);
+
+  const [email, setEmail] = useState("");
+  const [validEmail, setValidEmail] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
@@ -53,11 +58,15 @@ export default function Register() {
   }, [pwd, matchPwd]);
 
   useEffect(() => {
+    setValidEmail(EMAIL_REGEX.test(email));
+  }, [email]);
+
+  useEffect(() => {
     setErrMsg("");
   }, [user, pwd, matchPwd]);
 
   return (
-    <div className="container">
+    <section>
       <p
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
@@ -71,17 +80,18 @@ export default function Register() {
       </div>
       <form>
         <div className="inputs">
+          <FaUser className="user" />
+          <label htmlFor="fullname">
+            Full Name:
+            <span className={validName ? "valid" : "hidden"}>
+              <FaCheck />
+            </span>
+            <span className={validName || !user ? "hidden" : "invalid"}>
+              <FaTimes />
+            </span>
+          </label>
+
           <div className="input">
-            <FaUser className="user" />
-            <label htmlFor="fullname">
-              Full Name:
-              <span className={validName ? "valid" : "hide"}>
-                <FaCheck />
-              </span>
-              <span className={validName || !user ? "hide" : "invalid"}>
-                <FaTimes />
-              </span>
-            </label>
             <input
               type="text"
               id="fullname"
@@ -94,10 +104,11 @@ export default function Register() {
               onFocus={() => setUserFocus(true)}
               onBlur={() => setUserFocus(false)}
             />
+
             <p
               id="uidnote"
               className={
-                userFocus && user && !validName ? "instruction" : "offscreen"
+                userFocus && user && !validName ? "instructions" : "hidden"
               }
             >
               <FaInfoCircle />
@@ -106,13 +117,101 @@ export default function Register() {
               Must begin with a letter.
             </p>
           </div>
-          <div className="input">
+
+          <label htmlFor="email">
             <FaEnvelope className="enve" />
-            <input type="email" placeholder="Email Id" />
-          </div>
+            Email:
+            <span className={validEmail ? "valid" : "hidden"}>
+              <FaCheck />
+            </span>
+            <span className={validEmail || !email ? "hidden" : "invalid"}>
+              <FaTimes />
+            </span>
+          </label>
           <div className="input">
+            <input
+              type="email"
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              autoComplete="off"
+              onFocus={() => setEmailFocus(true)}
+              onBlur={() => setEmailFocus(false)}
+              placeholder="Email Id"
+            />
+          </div>
+
+          <label htmlFor="password">
             <FaLock className="lock" />
-            <input type="password" placeholder="Password" />
+            Password:
+            <span className={validPwd ? "valid" : "hidden"}>
+              <FaCheck />
+            </span>
+            <span className={validPwd || !pwd ? "hidden" : "invalid"}>
+              <FaTimes />
+            </span>
+          </label>
+
+          <div className="input">
+            <input
+              type="password"
+              id="password"
+              onChange={(e) => setPwd(e.target.value)}
+              required
+              aria-invalid={validPwd ? "false" : "true"}
+              aria-describedby="pwdnote"
+              onFocus={() => setPwdFocus(true)}
+              onBlur={() => setPwdFocus(false)}
+              placeholder="Password"
+            />
+            <p
+              id="pwdnote"
+              className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
+            >
+              <FaInfoCircle />
+              8 to 24 characters. <br />
+              Must include uppercase and lowercase letters, a number and a
+              special character.
+              <br />
+              Allowed special characters:{" "}
+              <span aria-label="exclamation mark">!</span>
+              <span aria-label="at symbol">@</span>
+              <span aria-label="hashtag">#</span>
+              <span aria-label="dollar sign">$</span>
+              <span aria-label="percent">%</span>
+            </p>
+          </div>
+
+          <label htmlFor="confirm_pwd">
+            Confirm Password:
+            <span className={validMatch && matchPwd ? "valid" : "hidden"}>
+              <FaCheck />
+            </span>
+            <span className={validMatch || !matchPwd ? "hidden" : "invalid"}>
+              <FaTimes />
+            </span>
+          </label>
+
+          <div className="input">
+            <input
+              type="password"
+              id="confirm_pwd"
+              onChange={(e) => setMatchPwd(e.target.value)}
+              required
+              aria-invalid={validMatch ? "false" : "true"}
+              aria-describedby="confirmnote"
+              onFocus={() => setMatchFocus(true)}
+              onBlur={() => setMatchFocus(false)}
+            />
+            <p
+              id="confirmnote"
+              className={
+                matchFocus && !validMatch ? "instructions" : "offscreen"
+              }
+            >
+              <FaInfoCircle />
+              Must match the first password.
+            </p>
           </div>
 
           <div className="forgot-password">
@@ -125,6 +224,6 @@ export default function Register() {
           </div>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
