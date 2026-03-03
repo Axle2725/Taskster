@@ -1,13 +1,12 @@
-/* .container {
+.container {
   display: flex;
-  background-color: #aba5a5;
+  background-color: #172137;
   flex-direction: column;
   margin: auto;
   margin-top: 16px;
   width: 600px;
   padding-bottom: 30px;
   border-radius: 16px;
-  
 }
 
 .header {
@@ -36,15 +35,16 @@
   margin-top: 55px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  /* align-items: center; */
+  gap: 20px;
 }
 
 .input {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   margin: auto;
   width: 480px;
-  height: 80px;
+  height: 40px;
   background: #eaeaea;
   border-radius: 6px;
 }
@@ -66,7 +66,10 @@
   outline: none;
   color: #797979;
   font-size: 19px;
-} */
+}
+.input input:focus {
+  color: darkslategrey;
+}
 .hidden {
   display: none;
 }
@@ -100,7 +103,10 @@
   position: relative;
   bottom: -5px;
 }
-
 .instructions > svg {
   margin-right: 0.25rem;
+}
+.Link,
+.Link:visited {
+  color: #fff;
 }
