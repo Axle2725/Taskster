@@ -112,7 +112,8 @@ Link:visited {
 }
 @media (max-width: 480px) {
   .container {
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
   }
   /* .input input {
     width:100%;
