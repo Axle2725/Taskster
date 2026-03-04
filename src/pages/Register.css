@@ -4,9 +4,14 @@
   flex-direction: column;
   margin: auto;
   margin-top: 16px;
-  width: 600px;
+
+  width: 90%; /* FIX: replaced fixed width 600px */
+  max-width: 600px; /* FIX: keeps desktop size but allows shrinking */
+
+  padding: 30px 20px; /* FIX: improved padding for smaller screens */
   padding-bottom: 30px;
   border-radius: 16px;
+  box-sizing: border-box; /* FIX: prevents overflow on mobile */
 }
 
 .header {
@@ -20,7 +25,9 @@
 
 .text {
   color: rgb(168, 111, 6);
-  font-size: 48px;
+
+  font-size: clamp(32px, 5vw, 48px); /* FIX: responsive font size */
+
   font-weight: 700;
 }
 
@@ -35,45 +42,55 @@
   margin-top: 55px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   gap: 20px;
 }
 
 .input {
   display: flex;
-  /* align-items: center; */
+  align-items: center; /* FIX: vertically align icon + input */
+
   margin: auto;
-  width: 480px;
-  height: 40px;
+  width: 100%; /* FIX: replaced 480px */
+
   background: #eaeaea;
   border-radius: 6px;
+
+  padding: 10px; /* FIX: spacing for mobile */
+  box-sizing: border-box; /* FIX */
 }
 
 .user {
-  margin: 0px 30px;
+  margin: 0px 10px; /* FIX: reduced margin for smaller screens */
 }
 .enve {
-  margin: 0px 30px;
+  margin: 0px 10px; /* FIX */
 }
 .lock {
-  margin: 0px 30px;
+  margin: 0px 10px; /* FIX */
 }
+
 .input input {
-  height: 50px;
-  width: 400px;
+  flex: 1; /* FIX: makes input fill remaining space */
+
+  height: 40px; /* FIX: replaced 50px */
+
   background: transparent;
   border: none;
   outline: none;
   color: #797979;
-  font-size: 19px;
-  justify-content: center;
+
+  font-size: 16px; /* FIX: better mobile readability */
+  width: 100%; /* FIX */
 }
+
 .input input:focus {
   color: darkslategrey;
 }
+
 .hidden {
   display: none;
 }
+
 .valid {
   color: limegreen;
   margin-left: 0.25rem;
@@ -91,10 +108,12 @@
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 .offscreen {
   position: absolute;
   left: -9999px;
 }
+
 .instructions {
   font-size: 0.75rem;
   border-radius: 0.5rem;
@@ -104,20 +123,39 @@
   position: relative;
   bottom: -5px;
 }
+
 .instructions > svg {
   margin-right: 0.25rem;
 }
+
 .Link,
 Link:visited {
   color: #fff;
 }
+
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 480px) {
   .container {
-    display: flex;
-    width: 95%;
-    margin: 0 auto;
+    width: 95%; /* FIX: better mobile spacing */
+    padding: 20px 15px; /* FIX */
   }
+
+  .text {
+    font-size: 28px; /* FIX: smaller heading */
+  }
+
+  .input {
+    padding: 8px; /* FIX */
+  }
+
   .input input {
-    width: 95%;
+    font-size: 14px; /* FIX */
+    height: 36px; /* FIX */
+  }
+
+  .user,
+  .enve,
+  .lock {
+    margin: 0 6px; /* FIX */
   }
 }
