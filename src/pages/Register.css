@@ -112,6 +112,8 @@ Link:visited {
 }
 @media (max-width: 768px) {
   .container {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
   }
 }
