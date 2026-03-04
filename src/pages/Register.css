@@ -121,7 +121,7 @@ Link:visited {
     margin: 0 auto;
     align-self: center;
   }
-  /* .input input {
-    width:100%;
-  } */
+  .input input {
+    width: 100%;
+  }
 }
