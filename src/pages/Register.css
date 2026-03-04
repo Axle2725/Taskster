@@ -112,20 +112,12 @@ Link:visited {
   color: #fff;
 }
 @media (max-width: 480px) {
-  * {
-    width: 100%;
-  }
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .container {
     display: flex;
     width: 95%;
     margin: 0 auto;
   }
   .input input {
-    width: 100%;
+    width: 95%;
   }
 }
