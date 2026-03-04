@@ -107,6 +107,11 @@
   margin-right: 0.25rem;
 }
 .Link,
-.Link:visited {
+Link:visited {
   color: #fff;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
 }
