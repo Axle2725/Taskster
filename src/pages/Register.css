@@ -112,6 +112,10 @@ Link:visited {
   color: #fff;
 }
 @media (max-width: 480px) {
+  * {
+    width: 100%;
+  }
+
   .container {
     width: 95%;
     margin: 0 auto;
