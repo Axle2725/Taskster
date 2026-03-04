@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function TaskForm({ addTask }) {
   const [task, setTask] = useState("");
-  const [priority, setPriority] = useState("Meduim");
+  const [priority, setPriority] = useState("Medium");
   const [category, setCategory] = useState("General");
 
   const handleSubmit = (e) => {
