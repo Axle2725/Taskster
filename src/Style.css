@@ -387,7 +387,7 @@ h1 {
 
   /* Adjust task list layout */
   .task-list li {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 
