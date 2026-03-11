@@ -9,7 +9,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/taskpage" element={<Form />} />
+      <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="/taskpage" element={<Form />} />
+      </Route>
     </Routes>
   );
 }
