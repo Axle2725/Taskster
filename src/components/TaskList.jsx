@@ -10,11 +10,7 @@ export default function TaskList({ tasks, updateTask, deleteTask }) {
         <li key={index} className={task.completed ? "completed" : " "}>
           <div>
             <span>
-              {task.text}
-              <p>
-                {" "}
-                ({task.priority}, {task.category})
-              </p>
+              {task.text} ({task.priority}, {task.category})
             </span>
           </div>
           <div>
