@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+}
+
+.dashboard {
+  padding: 40px;
+}
+.dashboard h1 {
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.task-card {
+  background: #162037;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-card p,
+h3 {
+  color: grey;
+}
+.add-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  color: white;
+  border: none;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  border-radius: 50px;
+  padding: 0.9rem 0.9rem;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s;
+  background: grey;
+}
+
+.task-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.delete-btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  background: crimson;
+  color: white;
+}
+
+.complete-btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #22d3ee;
+  color: white;
+}
+
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.progress-container {
+  margin-bottom: 30px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #2563eb;
+  transition: width 0.3s;
+}
