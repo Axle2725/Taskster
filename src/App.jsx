@@ -9,7 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/taskpage" element={<Home />} />
+      <Route path="/dashboard" element={<Home />} />
     </Routes>
   );
 }
