@@ -144,29 +144,28 @@ Link:visited {
   color: white;
 }
 
-/* MOBILE RESPONSIVENESS */
 @media (max-width: 480px) {
   .container {
-    width: 95%; /* FIX: better mobile spacing */
-    padding: 20px 15px; /* FIX */
+    width: 95%; /* better mobile spacing */
+    padding: 20px 15px;
   }
 
   .text {
-    font-size: 28px; /* FIX: smaller heading */
+    font-size: 28px; /* smaller heading */
   }
 
   .input {
-    padding: 8px; /* FIX */
+    padding: 8px;
   }
 
   .input input {
-    font-size: 14px; /* FIX */
-    height: 36px; /* FIX */
+    font-size: 14px;
+    height: 36px;
   }
 
   .user,
   .enve,
   .lock {
-    margin: 0 6px; /* FIX */
+    margin: 0 6px;
   }
 }
