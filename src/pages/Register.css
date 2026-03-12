@@ -133,6 +133,17 @@ Link:visited {
   color: #fff;
 }
 
+.submit {
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #193061;
+  color: white;
+}
+
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 480px) {
   .container {
