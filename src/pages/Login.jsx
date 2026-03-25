@@ -3,7 +3,7 @@ import AuthContext from "./context/AuthProvider";
 
 import axios from "../api/axios";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import styles from "./Login.module.css";
 
 const LOGIN_URL = "/auth";
 
@@ -73,7 +73,7 @@ export default function Login() {
         <section>
           <p
             ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"}
+            className={errMsg ? styles.errmsg : styles.offscreen}
             aria-live="assertive"
           >
             {errMsg}
@@ -104,7 +104,7 @@ export default function Login() {
           <p>
             Need an Account?
             <br />
-            <span className="line">
+            <span className={styles.line}>
               <Link to="/register">Sign Up</Link>
             </span>
           </p>

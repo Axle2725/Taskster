@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <div className="app">
+    <div>
       <Dashboard
         tasks={tasks}
         openModal={() => setOpenModal(true)}
