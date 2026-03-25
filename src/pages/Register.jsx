@@ -123,7 +123,7 @@ export default function Register() {
           <form onSubmit={handleSubmit}>
             <div className={styles.inputs}>
               <label htmlFor="fullname">
-                <FaUser className="user" />
+                <FaUser className={styles.user} />
                 Full Name:
                 <span className={validName ? styles.valid : styles.hidden}>
                   <FaCheck />
@@ -167,7 +167,7 @@ export default function Register() {
               </div>
 
               <label htmlFor="email">
-                <FaEnvelope className="enve" />
+                <FaEnvelope className={styles.enve} />
                 Email:
                 <span className={validEmail ? styles.valid : styles.hidden}>
                   <FaCheck />
@@ -180,7 +180,7 @@ export default function Register() {
                   <FaTimes />
                 </span>
               </label>
-              <div className="input">
+              <div className={styles.input}>
                 <input
                   type="email"
                   id="email"
@@ -192,7 +192,7 @@ export default function Register() {
               </div>
 
               <label htmlFor="password">
-                <FaLock className="lock" />
+                <FaLock className={styles.lock} />
                 Password:
                 <span className={validPwd ? styles.valid : styles.hidden}>
                   <FaCheck />
@@ -204,7 +204,7 @@ export default function Register() {
                 </span>
               </label>
 
-              <div className="input">
+              <div className={styles.input}>
                 <input
                   type="password"
                   id="password"
@@ -237,7 +237,7 @@ export default function Register() {
               </div>
 
               <label htmlFor="confirm_pwd">
-                <FaLock className="lock" />
+                <FaLock className={styles.lock} />
                 Confirm Password:
                 <span
                   className={
@@ -255,7 +255,7 @@ export default function Register() {
                 </span>
               </label>
 
-              <div className="input">
+              <div className={styles.input}>
                 <input
                   type="password"
                   id="confirm_pwd"
