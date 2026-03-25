@@ -82,34 +82,44 @@ export default function Login() {
             <h1 className={styles.text}>Sign In</h1>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className={styles.input}>
-              <label htmlFor="fullname">Full Name:</label>
-              <input
-                type="text"
-                id="fullname"
-                ref={userRef}
-                autoComplete="off"
-                onChange={(e) => setUser(e.target.value)}
-                value={user}
-                required
-              />
+            <div className={styles.inputs}>
+              <label htmlFor="fullname">
+                <FaUser className={styles.user} />
+                Full Name:
+              </label>
+              <div className={styles.input}>
+                <input
+                  type="text"
+                  id="fullname"
+                  ref={userRef}
+                  autoComplete="off"
+                  onChange={(e) => setUser(e.target.value)}
+                  value={user}
+                  required
+                />
+              </div>
+              <label htmlFor="password">
+                <FaLock className={styles.lock} />
+                Password:
+              </label>
+              <div className={styles.input}>
+                <input
+                  type="password"
+                  id="password"
+                  onChange={(e) => setPwd(e.target.value)}
+                  value={pwd}
+                  required
+                />
+              </div>
+              <div className={styles.btncon}>
+                <button className={styles.submit}>Sign In</button>
+              </div>
             </div>
-            <div className={styles.input}>
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                onChange={(e) => setPwd(e.target.value)}
-                value={pwd}
-                required
-              />
-            </div>
-            <button className={styles.submit}>Sign In</button>
           </form>
           <p>
             Need an Account?
             <br />
-            <span className={styles.line}>
+            <span>
               <Link className={styles.Link} to="/register">
                 Sign Up
               </Link>

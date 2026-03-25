@@ -25,9 +25,7 @@
 
 .text {
   color: rgb(168, 111, 6);
-
   font-size: clamp(32px, 5vw, 48px); /* FIX: responsive font size */
-
   font-weight: 700;
 }
 
