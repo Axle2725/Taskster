@@ -1,7 +1,8 @@
 import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "./context/AuthProvider";
 
-import axios from "./api/axios";
+import axios from "../api/axios";
+import { Link } from "react-router-dom";
 const LOGIN_URL = "/auth";
 
 export default function Login() {
@@ -63,7 +64,7 @@ export default function Login() {
           <h1>You are logged in!</h1>
           <br />
           <p>
-            <a href="#">Go to Home</a>
+            <Link to="/dashboard"> Go to Home</Link>
           </p>
         </section>
       ) : (
@@ -102,8 +103,7 @@ export default function Login() {
             Need an Account?
             <br />
             <span className="line">
-              {/*put router link here*/}
-              <a href="#">Sign Up</a>
+              <Link to="/register">Sign Up</Link>
             </span>
           </p>
         </section>
