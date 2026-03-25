@@ -4,6 +4,7 @@ import AuthContext from "./context/AuthProvider";
 import axios from "../api/axios";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
+import { FaLock, FaUser } from "react-icons/fa";
 
 const LOGIN_URL = "/auth";
 
