@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  background-color: #172137;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 16px;
+
+  width: 90%; 
+  max-width: 600px; 
+
+  padding: 30px 20px; 
+  padding-bottom: 30px;
+  border-radius: 16px;
+  box-sizing: border-box; /
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.inputs {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* FIX: vertically align icon + input */
+
+  margin: auto;
+  width: 100%; /* FIX: replaced 480px */
+
+  background: #eaeaea;
+  border-radius: 6px;
+
+  padding: 10px; /* FIX: spacing for mobile */
+  box-sizing: border-box; /* FIX */
+}
+
+.input input {
+  flex: 1; /* FIX: makes input fill remaining space */
+
+  height: 40px; /* FIX: replaced 50px */
+
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #797979;
+
+  font-size: 16px; /* FIX: better mobile readability */
+  width: 100%; /* FIX */
+}
+
+.submit {
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #193061;
+  color: white;
+}
+
+.Link,
+Link:visited {
+  color: #fff;
+}

@@ -70,7 +70,7 @@ export default function Login() {
           </p>
         </section>
       ) : (
-        <section>
+        <section className={styles.container}>
           <p
             ref={errRef}
             className={errMsg ? styles.errmsg : styles.offscreen}
@@ -78,34 +78,41 @@ export default function Login() {
           >
             {errMsg}
           </p>
-          <h1>Sign In</h1>
+          <div className={styles.header}>
+            <h1 className={styles.text}>Sign In</h1>
+          </div>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
-            <input
-              type="text"
-              id="username"
-              ref={userRef}
-              autoComplete="off"
-              onChange={(e) => setUser(e.target.value)}
-              value={user}
-              required
-            />
-
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              onChange={(e) => setPwd(e.target.value)}
-              value={pwd}
-              required
-            />
-            <button>Sign In</button>
+            <div className={styles.input}>
+              <label htmlFor="fullname">Full Name:</label>
+              <input
+                type="text"
+                id="fullname"
+                ref={userRef}
+                autoComplete="off"
+                onChange={(e) => setUser(e.target.value)}
+                value={user}
+                required
+              />
+            </div>
+            <div className={styles.input}>
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                onChange={(e) => setPwd(e.target.value)}
+                value={pwd}
+                required
+              />
+            </div>
+            <button className={styles.submit}>Sign In</button>
           </form>
           <p>
             Need an Account?
             <br />
             <span className={styles.line}>
-              <Link to="/register">Sign Up</Link>
+              <Link className={styles.Link} to="/register">
+                Sign Up
+              </Link>
             </span>
           </p>
         </section>
