@@ -7,7 +7,7 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { useRef, useState, useEffect } from "react";
-import "./Register.css";
+import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
 import axios from "../api/axios";
 
@@ -108,32 +108,36 @@ export default function Register() {
           <Link to="/login">Sign In</Link>
         </section>
       ) : (
-        <section className="container">
+        <section className={styles.container}>
           <p
             ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"}
+            className={errMsg ? styles.errmsg : styles.offscreen}
             aria-live="assertive"
           >
             {errMsg}
           </p>
-          <div className="header">
-            <div className="text">Sign Up</div>
-            <div className="underline"></div>
+          <div className={styles.header}>
+            <div className={styles.text}>Sign Up</div>
+            <div className={styles.underline}></div>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="inputs">
+            <div className={styles.inputs}>
               <label htmlFor="fullname">
                 <FaUser className="user" />
                 Full Name:
-                <span className={validName ? "valid" : "hidden"}>
+                <span className={validName ? styles.valid : styles.hidden}>
                   <FaCheck />
                 </span>
-                <span className={validName || !user ? "hidden" : "invalid"}>
+                <span
+                  className={
+                    validName || !user ? styles.hidden : styles.invalid
+                  }
+                >
                   <FaTimes />
                 </span>
               </label>
 
-              <div className="input">
+              <div className={styles.input}>
                 <input
                   type="text"
                   id="fullname"
@@ -150,7 +154,9 @@ export default function Register() {
                 <p
                   id="uidnote"
                   className={
-                    userFocus && user && !validName ? "instructions" : "hidden"
+                    userFocus && user && !validName
+                      ? styles.instructions
+                      : styles.hidden
                   }
                 >
                   <FaInfoCircle />
@@ -163,10 +169,14 @@ export default function Register() {
               <label htmlFor="email">
                 <FaEnvelope className="enve" />
                 Email:
-                <span className={validEmail ? "valid" : "hidden"}>
+                <span className={validEmail ? styles.valid : styles.hidden}>
                   <FaCheck />
                 </span>
-                <span className={validEmail || !email ? "hidden" : "invalid"}>
+                <span
+                  className={
+                    validEmail || !email ? styles.hidden : styles.invalid
+                  }
+                >
                   <FaTimes />
                 </span>
               </label>
@@ -184,10 +194,12 @@ export default function Register() {
               <label htmlFor="password">
                 <FaLock className="lock" />
                 Password:
-                <span className={validPwd ? "valid" : "hidden"}>
+                <span className={validPwd ? styles.valid : styles.hidden}>
                   <FaCheck />
                 </span>
-                <span className={validPwd || !pwd ? "hidden" : "invalid"}>
+                <span
+                  className={validPwd || !pwd ? styles.hidden : styles.invalid}
+                >
                   <FaTimes />
                 </span>
               </label>
@@ -207,7 +219,7 @@ export default function Register() {
                 <p
                   id="pwdnote"
                   className={
-                    pwdFocus && !validPwd ? "instructions" : "offscreen"
+                    pwdFocus && !validPwd ? styles.instructions : styles.hidden
                   }
                 >
                   <FaInfoCircle />
@@ -227,11 +239,17 @@ export default function Register() {
               <label htmlFor="confirm_pwd">
                 <FaLock className="lock" />
                 Confirm Password:
-                <span className={validMatch && matchPwd ? "valid" : "hidden"}>
+                <span
+                  className={
+                    validMatch && matchPwd ? styles.valid : styles.hidden
+                  }
+                >
                   <FaCheck />
                 </span>
                 <span
-                  className={validMatch || !matchPwd ? "hidden" : "invalid"}
+                  className={
+                    validMatch || !matchPwd ? styles.hidden : styles.invalid
+                  }
                 >
                   <FaTimes />
                 </span>
@@ -252,7 +270,9 @@ export default function Register() {
                 <p
                   id="confirmnote"
                   className={
-                    matchFocus && !validMatch ? "instructions" : "offscreen"
+                    matchFocus && !validMatch
+                      ? styles.instructions
+                      : styles.hidden
                   }
                 >
                   <FaInfoCircle />
@@ -260,14 +280,15 @@ export default function Register() {
                 </p>
               </div>
 
-              <div className="submit-container">
+              <div>
+                {/*className={styles.submit-container}> */}
                 <button
                   disabled={
                     !validName || !validEmail || !validPwd || !validMatch
                       ? true
                       : false
                   }
-                  className="submit"
+                  className={styles.submit}
                 >
                   Sign Up
                 </button>
@@ -278,7 +299,7 @@ export default function Register() {
             Already registered?
             <br />
             <span>
-              <Link className="Link" to="/login">
+              <Link className={styles.Link} to="/login">
                 Sign In
               </Link>
             </span>
