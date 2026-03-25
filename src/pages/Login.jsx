@@ -3,6 +3,8 @@ import AuthContext from "./context/AuthProvider";
 
 import axios from "../api/axios";
 import { Link } from "react-router-dom";
+import "./Login.css";
+
 const LOGIN_URL = "/auth";
 
 export default function Login() {
