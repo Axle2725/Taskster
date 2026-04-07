@@ -9,7 +9,7 @@ function Hero() {
           Taskster helps you stay productive, organized, and focused. Plan your
           day, track progress, and achieve your goals effortlessly.
         </p>
-        <Link to="/dashboard">
+        <Link to="/register">
           <button className="btn btn-primary">Get Started</button>
         </Link>
       </div>

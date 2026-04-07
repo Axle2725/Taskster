@@ -4,7 +4,7 @@ function Navbar() {
       <div className="logo">Taskster</div>
       <nav>
         <a href="#features">Features</a>
-        <a href="#">Login</a>
+        <Link to="/login">Login</Link>
       </nav>
     </header>
   );
