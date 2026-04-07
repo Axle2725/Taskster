@@ -39,7 +39,6 @@ export default function Login() {
         },
       );
       console.log(JSON.stringify(response?.data));
-      //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
       setAuth({ user, pwd, roles, accessToken });
@@ -63,7 +62,7 @@ export default function Login() {
   return (
     <>
       {success ? (
-        <section>
+        <section className={styles.container}>
           <h1>You are logged in!</h1>
           <br />
           <p>
